@@ -5,7 +5,3 @@ An open world head-to-head tank fighting game with simple ai, terrain, and advan
 * And this is a bullet
 
 Here's a link to the markdown cheatsheet:  [Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-
-This is some test text
-
-Yet some more text
