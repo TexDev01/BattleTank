@@ -5,124 +5,124 @@
 			"name": "BattleTank (Debug)",
 			"request": "launch",
 			"preLaunchTask": "BattleTank Win64 Debug Build",
-			"program": "E:\\GameDev\\BattleTank\\BattleTank\\Binaries\\Win64\\BattleTank-Win64-Debug.exe",
+			"program": "F:\\GameDev\\BattleTank\\BattleTank\\Binaries\\Win64\\BattleTank-Win64-Debug.exe",
 			"args": [
 			],
-			"cwd": "E:\\Games\\Epic Games\\UE_4.22",
+			"cwd": "F:\\Games\\Epic Games\\UE_4.22",
 			"stopAtEntry": false,
 			"externalConsole": true,
 			"type": "cppvsdbg",
-			"visualizerFile": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+			"visualizerFile": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
 		},
 		{
 			"name": "BattleTank (DebugGame)",
 			"request": "launch",
 			"preLaunchTask": "BattleTank Win64 DebugGame Build",
-			"program": "E:\\GameDev\\BattleTank\\BattleTank\\Binaries\\Win64\\BattleTank-Win64-DebugGame.exe",
+			"program": "F:\\GameDev\\BattleTank\\BattleTank\\Binaries\\Win64\\BattleTank-Win64-DebugGame.exe",
 			"args": [
 			],
-			"cwd": "E:\\Games\\Epic Games\\UE_4.22",
+			"cwd": "F:\\Games\\Epic Games\\UE_4.22",
 			"stopAtEntry": false,
 			"externalConsole": true,
 			"type": "cppvsdbg",
-			"visualizerFile": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+			"visualizerFile": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
 		},
 		{
 			"name": "BattleTank (Development)",
 			"request": "launch",
 			"preLaunchTask": "BattleTank Win64 Development Build",
-			"program": "E:\\GameDev\\BattleTank\\BattleTank\\Binaries\\Win64\\BattleTank.exe",
+			"program": "F:\\GameDev\\BattleTank\\BattleTank\\Binaries\\Win64\\BattleTank.exe",
 			"args": [
 			],
-			"cwd": "E:\\Games\\Epic Games\\UE_4.22",
+			"cwd": "F:\\Games\\Epic Games\\UE_4.22",
 			"stopAtEntry": false,
 			"externalConsole": true,
 			"type": "cppvsdbg",
-			"visualizerFile": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+			"visualizerFile": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
 		},
 		{
 			"name": "BattleTank (Shipping)",
 			"request": "launch",
 			"preLaunchTask": "BattleTank Win64 Shipping Build",
-			"program": "E:\\GameDev\\BattleTank\\BattleTank\\Binaries\\Win64\\BattleTank-Win64-Shipping.exe",
+			"program": "F:\\GameDev\\BattleTank\\BattleTank\\Binaries\\Win64\\BattleTank-Win64-Shipping.exe",
 			"args": [
 			],
-			"cwd": "E:\\Games\\Epic Games\\UE_4.22",
+			"cwd": "F:\\Games\\Epic Games\\UE_4.22",
 			"stopAtEntry": false,
 			"externalConsole": true,
 			"type": "cppvsdbg",
-			"visualizerFile": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+			"visualizerFile": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
 		},
 		{
 			"name": "BattleTank (Test)",
 			"request": "launch",
 			"preLaunchTask": "BattleTank Win64 Test Build",
-			"program": "E:\\GameDev\\BattleTank\\BattleTank\\Binaries\\Win64\\BattleTank-Win64-Test.exe",
+			"program": "F:\\GameDev\\BattleTank\\BattleTank\\Binaries\\Win64\\BattleTank-Win64-Test.exe",
 			"args": [
 			],
-			"cwd": "E:\\Games\\Epic Games\\UE_4.22",
+			"cwd": "F:\\Games\\Epic Games\\UE_4.22",
 			"stopAtEntry": false,
 			"externalConsole": true,
 			"type": "cppvsdbg",
-			"visualizerFile": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+			"visualizerFile": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
 		},
 		{
 			"name": "BattleTankEditor (Debug)",
 			"request": "launch",
 			"preLaunchTask": "BattleTankEditor Win64 Debug Build",
-			"program": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
+			"program": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
 			"args": [
-				"E:\\GameDev\\BattleTank\\BattleTank\\BattleTank.uproject"
+				"F:\\GameDev\\BattleTank\\BattleTank\\BattleTank.uproject"
 			],
-			"cwd": "E:\\Games\\Epic Games\\UE_4.22",
+			"cwd": "F:\\Games\\Epic Games\\UE_4.22",
 			"stopAtEntry": false,
 			"externalConsole": true,
 			"type": "cppvsdbg",
-			"visualizerFile": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+			"visualizerFile": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
 		},
 		{
 			"name": "BattleTankEditor (DebugGame)",
 			"request": "launch",
 			"preLaunchTask": "BattleTankEditor Win64 DebugGame Build",
-			"program": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Binaries\\Win64\\UE4Editor.exe",
+			"program": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Binaries\\Win64\\UE4Editor.exe",
 			"args": [
-				"E:\\GameDev\\BattleTank\\BattleTank\\BattleTank.uproject"
+				"F:\\GameDev\\BattleTank\\BattleTank\\BattleTank.uproject"
 			],
-			"cwd": "E:\\Games\\Epic Games\\UE_4.22",
+			"cwd": "F:\\Games\\Epic Games\\UE_4.22",
 			"stopAtEntry": false,
 			"externalConsole": true,
 			"type": "cppvsdbg",
-			"visualizerFile": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+			"visualizerFile": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
 		},
 		{
 			"name": "BattleTankEditor (Development)",
 			"request": "launch",
 			"preLaunchTask": "BattleTankEditor Win64 Development Build",
-			"program": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Binaries\\Win64\\UE4Editor.exe",
+			"program": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Binaries\\Win64\\UE4Editor.exe",
 			"args": [
-				"E:\\GameDev\\BattleTank\\BattleTank\\BattleTank.uproject"
+				"F:\\GameDev\\BattleTank\\BattleTank\\BattleTank.uproject"
 			],
-			"cwd": "E:\\Games\\Epic Games\\UE_4.22",
+			"cwd": "F:\\Games\\Epic Games\\UE_4.22",
 			"stopAtEntry": false,
 			"externalConsole": true,
 			"type": "cppvsdbg",
-			"visualizerFile": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+			"visualizerFile": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
 		},
 		{
 			"name": "Generate Project Files",
 			"type": "clr",
 			"request": "launch",
-			"program": "E:\\Games\\Epic Games\\UE_4.22\\Engine\\Binaries\\DotNET\\UnrealBuildTool.exe",
+			"program": "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Binaries\\DotNET\\UnrealBuildTool.exe",
 			"console": "externalTerminal",
 			"args": [
 				"-projectfiles",
 				"-vscode",
-				"-project=\"E:\\GameDev\\BattleTank\\BattleTank\\BattleTank.uproject\"",
+				"-project=\"F:\\GameDev\\BattleTank\\BattleTank\\BattleTank.uproject\"",
 				"-game",
 				"-engine"
 			],
 			"internalConsoleOptions": "openOnSessionStart",
-			"cwd": "E:\\Games\\Epic Games\\UE_4.22"
+			"cwd": "F:\\Games\\Epic Games\\UE_4.22"
 		}
 	]
 }
