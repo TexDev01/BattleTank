@@ -402,6 +402,7 @@
                 "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Source\\ThirdParty",
                 "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Source\\ThirdParty\\libSampleRate\\Public",
                 "F:\\Games\\Epic Games\\UE_4.22\\Engine\\Source\\ThirdParty\\libSampleRate",
+                "F:\\GameDev\\BattleTank\\BattleTank\\Intermediate\\Build\\Win64\\UE4Editor\\Inc\\BattleTank",
                 "F:\\GameDev\\BattleTank\\BattleTank\\Source",
                 "F:\\GameDev\\BattleTank\\BattleTank\\Source\\BattleTank",
                 "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.16.27023\\INCLUDE",
@@ -409,8 +410,7 @@
                 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.17134.0\\ucrt",
                 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.17134.0\\shared",
                 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.17134.0\\um",
-                "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.17134.0\\winrt",
-                "${workspaceFolder}/Intermediate/Build/Win64/UE4Editor/Inc/BattleTank"
+                "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.17134.0\\winrt"
             ],
             "intelliSenseMode": "msvc-x64",
             "defines": [
