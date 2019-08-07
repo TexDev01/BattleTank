@@ -1,7 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "TankAimingComponent.h"
-#include "TankBarrel.h"
 
 // Sets default values for this component's properties
 UTankAimingComponent::UTankAimingComponent()
@@ -31,7 +30,6 @@ void UTankAimingComponent::AimAt(FString OurTankName, FVector HitLocation, float
 	if (bHaveAimSolution)
 	{
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
-		//UE_LOG(LogTemp, Warning, TEXT("Tank %s is aiming at %s"), *OurTankName, *AimDirection.ToString());
 		MoveBarrelTowards(AimDirection);
 	}
 }
