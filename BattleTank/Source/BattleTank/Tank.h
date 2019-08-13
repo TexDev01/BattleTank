@@ -43,9 +43,9 @@ private:
 	float ReloadTimeInSeconds = 3;
 	double LastFireTime = 0;
 
-	UPROPERTY(EditAnywhere, Category=Firing)
+	UPROPERTY(EditDefaultsOnly, Category=Firing)
 	float LaunchSpeed = 4000;  //Sensible starting value 1000 m/s
 
-	UPROPERTY(EditAnywhere, Category=Setup)
+	UPROPERTY(EditDefaultsOnly, Category=Setup)
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 };
