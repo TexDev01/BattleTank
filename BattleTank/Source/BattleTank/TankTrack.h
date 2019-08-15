@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/PrimitiveComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "TankTrack.generated.h"
 
@@ -17,4 +18,8 @@ class BATTLETANK_API UTankTrack : public UStaticMeshComponent
 public:
 	UFUNCTION(BlueprintCallable, Category = Input)
 	void SetThrottle(float Throttle);
+
+	// This is max force per track in newtons,
+	UPROPERTY(EditDefaultsOnly)
+	float TrackMaxDrivingForce = 400000; // Assume 40ton tank and 1g acceleration.
 };
