@@ -28,7 +28,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Setup")
 	void InitializeAiming(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet);
 
-	void AimAt(FString OurTankName, FVector HitLocation, float LaunchSpeed);
+	void AimAt(FVector HitLocation, float LaunchSpeed);
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")

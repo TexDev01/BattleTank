@@ -15,8 +15,8 @@ ATank::ATank()
 
 void ATank::AimAt(FVector HitLocation)
 {
-	auto OurTankName = GetName();
-	TankAimingComponent->AimAt(OurTankName, HitLocation, LaunchSpeed);
+	if (!TankAimingComponent) { return; }
+	TankAimingComponent->AimAt(HitLocation, LaunchSpeed);
 }
 
 void ATank::Fire()
