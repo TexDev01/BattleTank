@@ -9,7 +9,6 @@
 
 class AProjectile;
 class UTankBarrel;
-class UTankAimingComponent;
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn
@@ -20,16 +19,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Firing")
 	void Fire();
 
-	void AimAt(FVector HitLocation);
-
-protected:
-	UPROPERTY(BlueprintReadOnly)
-	UTankAimingComponent* TankAimingComponent = nullptr;
-
-	virtual void BeginPlay() override;
-
 private:
 	ATank();
+
+	virtual void BeginPlay() override;
 
 	float ReloadTimeInSeconds = 3;
 	double LastFireTime = 0;
