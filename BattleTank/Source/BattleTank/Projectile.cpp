@@ -9,6 +9,7 @@ AProjectile::AProjectile()
 	PrimaryActorTick.bCanEverTick = true;
 
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(FName("Projectile Movement Component"));
+	if(!ensure(ProjectileMovement)) { return; }
 	ProjectileMovement->bAutoActivate = false;
 }
 
@@ -26,6 +27,7 @@ void AProjectile::Tick(float DeltaTime)
 
 void AProjectile::LaunchProjectile(float Speed)
 {
+	if(!ensure(ProjectileMovement)) { return; }
 	ProjectileMovement->SetVelocityInLocalSpace(FVector::ForwardVector * Speed);
 	ProjectileMovement->Activate();
 }
