@@ -19,18 +19,26 @@ void UTankAimingComponent::BeginPlay()
 
 void UTankAimingComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction)
 {
-	if ((FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds)
+	if ((FPlatformTime::Seconds() - LastFireTime) < ReloadTimeInSeconds)
 	{
 		FiringStatus = EFiringStatus::Reloading;
 	}
+	else if (IsBarrelMoving())
+	{
+		FiringStatus = EFiringStatus::Aiming;
+	}
+	else
+	{
+		FiringStatus = EFiringStatus::Locked;
+	}
 }
 
-void UTankAimingComponent::test()
+bool UTankAimingComponent::IsBarrelMoving()
 {
-	if ((FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds)
-	{
-		EFiringStatus FiringState = EFiringStatus::Reloading;
-	}
+	if (!ensure(Barrel)) { return false; }
+
+	auto BarrelForwardVector = Barrel->GetForwardVector();
+	return !BarrelForwardVector.Equals(AimDirection, .01);
 }
 
 void UTankAimingComponent::InitializeAiming(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet)
@@ -57,9 +65,9 @@ void UTankAimingComponent::AimAt(FVector HitLocation)
 		ESuggestProjVelocityTraceOption::DoNotTrace
 	);
 
-	if (ensure(bHaveAimSolution))
+	if (bHaveAimSolution)
 	{
-		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
+		AimDirection = OutLaunchVelocity.GetSafeNormal();
 		MoveBarrelTowards(AimDirection);
 	}
 }
@@ -68,9 +76,9 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 {
 	if (!ensure(Barrel && Turret)) { return; }
 
-	auto Rotation = Barrel->GetForwardVector().GetSafeNormal().Rotation();
-	auto AimasRotator = AimDirection.GetSafeNormal().Rotation();
-	auto DeltaRotator = AimasRotator - Rotation;
+	auto BarrelRotation = Barrel->GetForwardVector().Rotation();
+	auto AimasRotator = AimDirection.Rotation();
+	auto DeltaRotator = AimasRotator - BarrelRotation;
 	
 	Barrel->Elevate(DeltaRotator.Pitch);
 	Turret->Rotate(DeltaRotator.Yaw);
@@ -87,6 +95,7 @@ void UTankAimingComponent::Fire()
 			Barrel->GetSocketLocation(FName("Projectile")),
 			Barrel->GetSocketRotation(FName("Projectile"))
 		);
+		LastFireTime = FPlatformTime::Seconds();
 		Projectile->LaunchProjectile(LaunchSpeed);
 	}	
 }
