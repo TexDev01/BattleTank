@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Components/PrimitiveComponent.h"
-#include "Components/ActorComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "TankTrack.generated.h"
 
