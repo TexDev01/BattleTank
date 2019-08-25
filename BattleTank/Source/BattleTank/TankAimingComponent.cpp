@@ -116,3 +116,8 @@ void UTankAimingComponent::Fire()
 		Projectile->LaunchProjectile(LaunchSpeed);
 	}	
 }
+
+EFiringStatus UTankAimingComponent::GetFiringStatus() const
+{
+	return FiringStatus;
+}
