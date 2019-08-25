@@ -1,10 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "TankTrack.h"
+#include "Math/UnrealMathUtility.h"
 
 UTankTrack::UTankTrack()
 {
-    PrimaryComponentTick.bCanEverTick = true;
+    PrimaryComponentTick.bCanEverTick = false;
 }
 
 void UTankTrack::BeginPlay()
@@ -15,28 +16,32 @@ void UTankTrack::BeginPlay()
 
 void UTankTrack::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
 {
-    UE_LOG(LogTemp, Warning, TEXT("I'm Hit"));
+    DriveTrack();
+    ApplySidewaysForce();
+    CurrentThrottle = 0;
 }
 
-void UTankTrack::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction)
+void UTankTrack::ApplySidewaysForce()
 {
-    Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-    
-    // Calculate the slippage speed
-    auto SlippageSpeed = FVector::DotProduct(GetComponentVelocity(), GetRightVector());
-
     // Workout the required acceleration this frame to correct
-    auto CounterAcceleration = -SlippageSpeed * GetRightVector();
+    auto SlippageSpeed = FVector::DotProduct(GetComponentVelocity(), GetRightVector());
+    auto DeltaTime = GetWorld()->GetDeltaSeconds();
+    auto CounterAcceleration = -SlippageSpeed / DeltaTime * GetRightVector();
     
     // Calculate and apply sidways force f=ma
     auto TankRoot = Cast<UStaticMeshComponent>(GetOwner()->GetRootComponent());
-    auto SidewaysForce = CounterAcceleration * TankRoot->GetMass();
+    auto SidewaysForce = (CounterAcceleration * TankRoot->GetMass()) / 2;
     TankRoot->AddForce(SidewaysForce);
 }
 
 void UTankTrack::SetThrottle(float Throttle)
+{ 
+    CurrentThrottle = FMath::Clamp<float>(CurrentThrottle + Throttle, -1, 1);
+}
+
+void UTankTrack::DriveTrack()
 {
-    auto ForceApplied = GetForwardVector() * Throttle * TrackMaxDrivingForce;
+    auto ForceApplied = GetForwardVector() * CurrentThrottle * TrackMaxDrivingForce;
     auto ForceLocation = GetComponentLocation();
     auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
     TankRoot->AddForceAtLocation(ForceApplied, ForceLocation);
