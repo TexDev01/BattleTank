@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/PrimitiveComponent.h"
+#include "Components/ActorComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "TankTrack.generated.h"
 
@@ -22,4 +23,9 @@ public:
 	// This is max force per track in newtons,
 	UPROPERTY(EditDefaultsOnly)
 	float TrackMaxDrivingForce = 25000000.0; // Assume 40ton tank and 1g acceleration.
+
+private:
+	UTankTrack();
+
+	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction) override;
 };
