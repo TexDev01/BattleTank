@@ -37,9 +37,6 @@ public:
 
 	EFiringStatus GetFiringStatus() const;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Firing")
-	int32 AmmoCount = 3;  // Starting ammo amount
-
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")
 	EFiringStatus FiringStatus = EFiringStatus::Reloading;
@@ -60,9 +57,15 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float LaunchSpeed = 4000;  //Sensible starting value 1000 m/s	
 
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	float ReloadTimeInSeconds = 3;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	int32 AmmoCount = 3;  // Starting ammo amount
+
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
-	float ReloadTimeInSeconds = 3;
+	
 	double LastFireTime = 0;
 	FVector AimDirection = FVector(0,0,0);
 };
