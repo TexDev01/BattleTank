@@ -13,7 +13,8 @@ enum class EFiringStatus : uint8
 {
 	Locked,
 	Aiming,
-	Reloading
+	Reloading,
+	OutOfAmmo
 };
 
 class UTankBarrel;
@@ -35,6 +36,9 @@ public:
 	void AimAt(FVector HitLocation);
 
 	EFiringStatus GetFiringStatus() const;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Firing")
+	int32 AmmoCount = 3;  // Starting ammo amount
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")
