@@ -16,7 +16,7 @@ AProjectile::AProjectile()
 
 	LaunchBlast = CreateDefaultSubobject<UParticleSystemComponent>(FName("Launch Blast Component"));
 	if(!ensure(LaunchBlast)) { return; }
-	LaunchBlast->AttachTo(RootComponent);
+	LaunchBlast->SetupAttachment(RootComponent);
 
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(FName("Projectile Movement Component"));
 	if(!ensure(ProjectileMovement)) { return; }
