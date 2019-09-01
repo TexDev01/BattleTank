@@ -7,6 +7,7 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/PrimitiveComponent.h"
+#include "Public/TimerManager.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "PhysicsEngine/RadialForceComponent.h"
 #include "Projectile.generated.h"
@@ -20,6 +21,11 @@ private:
 	AProjectile();
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	void OnTimerExpire();
+
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	float DestroyDelay = 10.f;
 
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
