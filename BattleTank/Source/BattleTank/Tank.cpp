@@ -13,3 +13,12 @@ void ATank::BeginPlay()
 {
 	Super::BeginPlay();
 }
+
+float ATank::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
+{
+	int32 DamagePoints = FPlatformMath::RoundToInt(Damage);
+	int32 DamageToApply = FMath::Clamp(DamagePoints, 0, CurrentHealth);
+	CurrentHealth -= DamageToApply;
+	UE_LOG(LogTemp, Warning, TEXT("Tank Health:  %i"), CurrentHealth);
+	return DamageToApply;
+}
