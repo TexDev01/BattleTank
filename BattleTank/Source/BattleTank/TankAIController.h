@@ -17,9 +17,6 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	float AcceptanceRadius = 8000;
 
-	//BroadcastingInstance->OnDeath;
-    //AddUniqueDynamic(this, &ATankAIController::OnTankDeath);
-
 private:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
