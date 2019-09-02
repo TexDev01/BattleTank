@@ -26,4 +26,7 @@ private:
 
 public:
 	virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser) override;
+
+	UFUNCTION(BlueprintPure, Category="Health")
+	float GetHealthPercent() const;
 };

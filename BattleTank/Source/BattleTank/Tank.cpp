@@ -22,3 +22,8 @@ float ATank::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, cl
 	UE_LOG(LogTemp, Warning, TEXT("Tank Health:  %i"), CurrentHealth);
 	return DamageToApply;
 }
+
+float ATank::GetHealthPercent() const
+{
+	return float(CurrentHealth) / float(StartingHealth);
+}
