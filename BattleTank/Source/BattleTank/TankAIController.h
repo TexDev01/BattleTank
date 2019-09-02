@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Engine/World.h"
 #include "AIController.h"
+#include "GameFramework/Controller.h"
 #include "TankAIController.generated.h"
 
 UCLASS()
@@ -16,7 +17,15 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	float AcceptanceRadius = 8000;
 
+	//BroadcastingInstance->OnDeath;
+    //AddUniqueDynamic(this, &ATankAIController::OnTankDeath);
+
 private:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
+
+	virtual void SetPawn(APawn* InPawn) override;
 };
